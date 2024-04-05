@@ -1,17 +1,20 @@
-package uv.djdm.todo.Model;
+package uv.djdm.todo.dto;
 
-public class ToDo {
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
+public class TodoDTO {
     private long id;
+
+    @NotNull
+    @Size(max = 50)
     private String title;
+
+    @NotNull
+    @Size(max = 1000)
     private String description;
     private boolean completed;
 
-    public ToDo(long id, String title, String description, boolean completed) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.completed = completed;
-    }
     public long getId() {
         return id;
     }
